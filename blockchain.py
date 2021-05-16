@@ -55,7 +55,16 @@ class BlockChain:
 
 
     def __init__(self):
-        pass
+        """
+            instantiates the blockchain
+
+           - self.chain — this variable stores all the blocks.
+           - self.current_data — this variable stores information about the transactions in the block.
+           - self.build_genesis() — this method is used to create the initial block in the chain.
+        """
+        self.chain = []
+        self.data_current = []
+        self.genesis_block()
 
 
     def genesis_block(self):
