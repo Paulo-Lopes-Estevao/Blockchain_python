@@ -105,11 +105,31 @@ class BlockChain:
 
 
     def get_last_block(self):
-        pass
+        """
+            last block
+
+        Returns:
+            dict block
+        """
+        return self.chain[-1]
 
 
     def add_transaction(self, sender, receiver, amount, time):
-        pass
+        """ data of transactions on a block
+
+        Args:
+            sender ([type]): sender’s information
+            receiver ([type]):  receiver’s information
+            amount ([type]): amount send 
+            time ([type]): time transactions
+        """
+
+        self.data_current.append({
+        'sender': sender,
+        'receiver': receiver,
+        'amount': amount,
+        'time': str(self.__NOW_DATE)
+})
 
 
     def hash(self, block):
