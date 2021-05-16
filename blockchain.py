@@ -133,7 +133,17 @@ class BlockChain:
 
 
     def hash(self, block):
-        pass
+        """
+        generator previous_hash
+
+        Args:
+            block ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
+        encoded_block = json.dumps(block, sort_keys=True).encode()
+        return hashlib.sha256(encoded_block).hexdigest()
 
 
     def proof_of_work(self):
