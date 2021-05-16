@@ -54,6 +54,9 @@ class Block:
 class BlockChain:
 
 
+    __NOW_DATE = datetime.datetime.now()
+
+
     def __init__(self):
         """
             instantiates the blockchain
@@ -74,8 +77,31 @@ class BlockChain:
         self.build_block(nonce=1, previous_hash='0')
 
 
-    def build_block(self):
-        pass
+    def build_block(self, nonce, previous_hash):
+        """
+        transactions
+
+        Args:
+           - nonce ([int]): randomly incremented so that the result of the hash function on the block satisfies
+           - previous_hash ([int]): contains the result of the hash function on the previous block
+
+        Returns:
+            block
+        """
+
+        block = Block(
+            index= len(self.chain) + 1,
+            timestamp= str(self.__NOW_DATE),
+            nonce= nonce,
+            previous_hash= previous_hash,
+            data= self.data_current
+        )
+
+        self.data_current = []
+
+        self.chain.append(block.block_data())
+        
+        return block
 
 
     def get_last_block(self):
