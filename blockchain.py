@@ -1,5 +1,6 @@
 import json
 import datetime
+import hashlib
 
 
 
@@ -22,7 +23,14 @@ class Block:
 
 
     def code_hash(self):
-        pass
+        """ 
+            is used to produce the cryptographic hash of each block based on the above values.
+
+        Returns:
+            [type]: imported the SHA-256 algorithm into the cryptocurrency blockchain project to help in getting the hashes of the blocks.
+        """
+        encoded_block = json.dumps(self.__dict__, sort_keys=True)
+        return hashlib.sha256(encoded_block).hexdigest()
 
 
     def block_data(self):
