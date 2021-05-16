@@ -147,7 +147,29 @@ class BlockChain:
 
 
     def proof_of_work(self):
-        pass
+        """is by taking the latest block and add a nonce such to satisfy tha
+
+        Returns:
+            [type]: [description]
+        """
+
+        previous_block = self.get_last_block()
+
+        previous_nonce = previous_block['nonce']
+
+        previous_hash = self.hash(previous_block)
+
+        new_nonce = 1
+        check_nonce = False
+        while check_nonce is False:
+            hash_operation = hashlib.sha256(
+                str(new_nonce**2 - previous_nonce**2).encode()).hexdigest()
+            if hash_operation[:4] == '0000':
+                check_nonce = True
+            else:
+                new_nonce += 1
+        #return new_nonce
+        return self.build_block(new_nonce, previous_hash)
 
 
     def is_chain_valid(self, chain):
