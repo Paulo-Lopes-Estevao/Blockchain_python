@@ -68,7 +68,10 @@ class BlockChain:
 
 
     def genesis_block(self):
-        pass
+        """
+            method is used for creating the initial block in the chain
+        """
+        self.build_block(nonce=1, previous_hash='0')
 
 
     def build_block(self):
