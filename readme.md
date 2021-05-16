@@ -21,7 +21,7 @@ must have the following characteristics:
 ## PT :
 
 
-> ### PT: Cria seu próprio blockchain de criptomoeda em Python
+> ### Cria seu próprio blockchain de criptomoeda em Python
 
 - Fundamentalmente, os dados armazenados em um blockchain devem ter as seguintes características:
 
