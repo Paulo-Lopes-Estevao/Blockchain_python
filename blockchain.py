@@ -191,6 +191,10 @@ class BlockChain:
 
 
 
+# ----------------------------------- print--------------------------
+blockchain = BlockChain()
+node_address = "a0ea10d5b483109573c882de44"
+root_node = '006cc49ce412b7c4ee5e48588e68e10'
 
 def mine_block():
     pass
