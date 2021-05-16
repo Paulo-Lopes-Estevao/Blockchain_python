@@ -202,7 +202,7 @@ def mine_block():
     receiver=node_address, 
     amount=1.15, 
     time=str(datetime.datetime.now()))
-#block = blockchain.build_block(nonce, previous_hash)
+
     block = blockchain.proof_of_work()
     response = {
                 'message': 'Congratulations, you just mined a block!',
