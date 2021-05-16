@@ -29,7 +29,7 @@ class Block:
             Returns:
                 [type]: imported the SHA-256 algorithm into the cryptocurrency blockchain project to help in getting the hashes of the blocks.
         """
-        encoded_block = json.dumps(self.__dict__, sort_keys=True)
+        encoded_block = json.dumps(self.__dict__, sort_keys=True).encode()
         return hashlib.sha256(encoded_block).hexdigest()
 
 
@@ -205,15 +205,15 @@ def mine_block():
 
     block = blockchain.proof_of_work()
     response = {
-                'message': 'Congratulations, you just mined a block!',
-                'index': block.repr()['index'],
-                'timestamp': block.repr()['timestamp'],
-                'nonce': block.repr()['nonce'],
-                'previous_hash': block.repr()['previous_hash'],
-                'transactions': block.repr()['data'],
+                'message': 'Success a block!',
+                'index': block.block_data()['index'],
+                'timestamp': block.block_data()['timestamp'],
+                'nonce': block.block_data()['nonce'],
+                'previous_hash': block.block_data()['previous_hash'],
+                'transactions': block.block_data()['data'],
                 }
     return response
 
 
-for item in range(0,2):
+for item in range(0,10):
     print(mine_block())
