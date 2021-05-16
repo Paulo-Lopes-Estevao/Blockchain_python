@@ -16,8 +16,9 @@ must have the following characteristics:
    * Unbreakable
    * Persistent (no data loss)
    * Distributed
-<br>
-<br>
+<br/>
+<br/>
+
 ## PT :
 > ### Cria seu próprio blockchain de criptomoeda em Python
 
