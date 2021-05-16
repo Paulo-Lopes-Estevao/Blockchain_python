@@ -197,4 +197,23 @@ node_address = "a0ea10d5b483109573c882de44"
 root_node = '006cc49ce412b7c4ee5e48588e68e10'
 
 def mine_block():
-    pass
+    blockchain.add_transaction(
+    sender=root_node, 
+    receiver=node_address, 
+    amount=1.15, 
+    time=str(datetime.datetime.now()))
+#block = blockchain.build_block(nonce, previous_hash)
+    block = blockchain.proof_of_work()
+    response = {
+                'message': 'Congratulations, you just mined a block!',
+                'index': block.repr()['index'],
+                'timestamp': block.repr()['timestamp'],
+                'nonce': block.repr()['nonce'],
+                'previous_hash': block.repr()['previous_hash'],
+                'transactions': block.repr()['data'],
+                }
+    return response
+
+
+for item in range(0,2):
+    print(mine_block())
