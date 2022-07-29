@@ -1,7 +1,7 @@
 # BlockChain Python
 
 ## EN :
-> ### Create Your Own Cryptocurrency Blockchain in Python
+> ### Create Your Own Blockchain in Python
 
 
 - What is Blockchain
@@ -20,7 +20,7 @@ must have the following characteristics:
 <br/>
 
 ## PT :
-> ### Cria seu próprio blockchain de criptomoeda em Python
+> ### Crie seu próprio Blockchain em Python
 
 - Fundamentalmente, os dados armazenados em um blockchain devem ter as seguintes características:
 
